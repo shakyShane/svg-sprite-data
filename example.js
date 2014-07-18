@@ -10,10 +10,17 @@ var config = {
     }
 };
 
+// Create instance
 var spriter = new SpriteData(config);
 
-var svg = fs.readFileSync("./test/fixtures/fb.svg", "utf-8");
+// Read a file however you like
+var path = "./test/fixtures/fb.svg";
+var svg  = fs.readFileSync(path, "utf-8");
 
-spriter.add("fb.svg", svg).compile(function (err, svg) {
+// Add the files CONTENTS only.
+spriter.add(path, svg).compile(function (err, svg) {
+
+    // Do crazy-ass shit with templates etc
     console.log(svg);
+
 });
