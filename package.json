@@ -1,0 +1,71 @@
+{
+  "name": "svg-sprite",
+  "version": "0.3.1",
+  "author": {
+    "name": "Shane Osbourne",
+    "email": "shakyshane@gmail.com",
+    "url": "http://shakyshane.com"
+  },
+  "description": "Create SVG sprite data only",
+  "homepage": "https://github.com/shakyshane/svg-sprite-data",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shakyshane/svg-sprite-data.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shakyshane/svg-sprite-data/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/shakyshane/svg-sprite-data/blob/master/LICENSE.txt"
+    }
+  ],
+  "main": "./index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "dependencies": {
+    "mkdirp": "~0.3.5",
+    "async": "~0.2.9",
+    "svgo": "~0.4.4",
+    "svg-cleaner": "~0.0.1",
+    "libxmljs": "~0.8.1",
+    "cssom": "~0.3.0",
+    "css-selector-parser": "~1.0.3",
+    "phantom-sync": "~1.1.1",
+    "commander": "~1.0.5",
+    "mustache": "~0.8.1",
+    "chalk": "~0.3.0",
+    "pretemplater": "^1.1.2",
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "",
+    "should": "",
+    "rimraf": "",
+    "svg2png": ">= 1.0.1",
+    "image-diff": ">= 0.3.0",
+    "clean-css": ">= 2.1.1",
+    "node-sass": ">= 0.8.1",
+    "mu2": ">= 0.5.20",
+    "less": ">= 1.6.3"
+  },
+  "keywords": [
+    "icon",
+    "icons",
+    "svg",
+    "png",
+    "sprite",
+    "generator",
+    "css",
+    "sass",
+    "less",
+    "vector",
+    "rwd",
+    "retina"
+  ]
+}
