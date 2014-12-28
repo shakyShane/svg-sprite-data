@@ -11,7 +11,6 @@ describe("Transforming height and width attributes", function () {
         var out = builder.doTransformsOnNode(json.svg.$, attrTransforms, {path: "/Users/shane/file-1.svg"}, config({
             svgId: "shane-%f"
         }));
-        assert.deepEqual(out.x, 0);
         assert.deepEqual(out.y, 0);
         assert.deepEqual(out.width,  8);
         assert.deepEqual(out.height, 12);
@@ -23,16 +22,14 @@ describe("Transforming height and width attributes", function () {
         assert.isUndefined(out.xmlns);
         assert.isUndefined(out["xmlns:xlink"]);
     });
-    it.only("strips IDs", function () {
+    it("strips IDs", function () {
         var out = builder(json, {path: "/Users/shane/file-1.svg"}, config({
             svgId: "shane-%f"
         }));
-        //console.log(out);
-        //console.log(out);
-        //var out = builder.doTransformsOnNode(json.svg, attrTransforms, {path: "/Users/shane/file-1.svg"}, config({
-        //    svgId: "shane-%f"
-        //}));
-        //assert.isUndefined(out.xmlns);
-        //assert.isUndefined(out["xmlns:xlink"]);
+        assert.isUndefined(out.data.svg.g.id);
+    });
+    it("Add's x to root blacklist when layout is vertical", function () {
+        var out = builder(json, {path: "/Users/shane/file-1.svg"}, config());
+        assert.isUndefined(out.data.svg.g.x);
     });
 });

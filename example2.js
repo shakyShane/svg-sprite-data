@@ -16,6 +16,7 @@ fs.src("./test/fixtures/inputs/arr-black.svg")
 
 function spriter(opts) {
     var config = merge(opts);
+    console.log(config);
     var sprite = new Sprite(config);
     return through2.obj(function (file, enc, cb) {
         if (file.isNull()) {
