@@ -23,4 +23,16 @@ describe("Transforming height and width attributes", function () {
         assert.isUndefined(out.xmlns);
         assert.isUndefined(out["xmlns:xlink"]);
     });
+    it.only("strips IDs", function () {
+        var out = builder(json, {path: "/Users/shane/file-1.svg"}, config({
+            svgId: "shane-%f"
+        }));
+        //console.log(out);
+        //console.log(out);
+        //var out = builder.doTransformsOnNode(json.svg, attrTransforms, {path: "/Users/shane/file-1.svg"}, config({
+        //    svgId: "shane-%f"
+        //}));
+        //assert.isUndefined(out.xmlns);
+        //assert.isUndefined(out["xmlns:xlink"]);
+    });
 });
