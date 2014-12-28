@@ -29,25 +29,16 @@
     "test": "mocha test/*.js"
   },
   "dependencies": {
-    "async": "~0.2.9",
-    "svgo": "~0.4.4",
-    "svg-cleaner": "~0.0.1",
-    "libxmljs": "~0.8.1",
-    "cssom": "~0.3.0",
-    "css-selector-parser": "~1.0.3",
-    "phantom-sync": "~1.1.1",
-    "lodash": "^2.4.1"
+    "immutable": "^3.4.1",
+    "xml2js": "^0.4.4"
   },
   "devDependencies": {
-    "mocha": "",
-    "should": "",
-    "rimraf": "",
-    "svg2png": ">= 1.0.1",
-    "image-diff": ">= 0.3.0",
-    "clean-css": ">= 2.1.1",
-    "node-sass": ">= 0.8.1",
-    "mu2": ">= 0.5.20",
-    "less": ">= 1.6.3"
+    "chai": "^1.10.0",
+    "gulp-util": "^3.0.1",
+    "mocha": "^2.1.0",
+    "rimraf": "^2.2.8",
+    "through2": "^0.6.3",
+    "vinyl-fs": "^0.3.13"
   },
   "keywords": [
     "icon",
