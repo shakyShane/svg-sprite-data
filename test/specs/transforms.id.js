@@ -5,7 +5,7 @@ var config         = require("../../lib/config");
 var assert         = require("chai").assert;
 var path           = require("path");
 
-describe("Transforming attr's on root node", function () {
+describe("Transforming ID's on root node", function () {
     it("uses file name as ID", function () {
         var out = builder.doTransformsOnNode({id: "shane"}, attrTransforms, {path: "/Users/shane/file-1.svg"}, config());
         assert.deepEqual(out, {
