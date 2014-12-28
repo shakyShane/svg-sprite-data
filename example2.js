@@ -5,20 +5,23 @@ var through2 = require("through2");
 var rimraf = require("rimraf");
 var builder = require("./lib/builder");
 var parser = require("./lib/parser");
-var config = require("./lib/config");
+var merge = require("./lib/config");
 var Sprite = require("./lib/Sprite");
 
 fs.src("./test/fixtures/inputs/arr-black.svg")
-    .pipe(spriter())
+    .pipe(spriter({
+        svgId: "shane-%f"
+    }))
     .pipe(fs.dest("./out"));
 
 function spriter(opts) {
-    var sprite = new Sprite();
+    var config = merge(opts);
+    var sprite = new Sprite(config);
     return through2.obj(function (file, enc, cb) {
         if (file.isNull()) {
             return cb();
         }
-        parser(file._contents.toString(), file, config(opts), function (err, result) {
+        parser(file._contents.toString(), file, config, function (err, result) {
             sprite.add(result);
             cb();
         });
@@ -30,6 +33,7 @@ function spriter(opts) {
             path:     "/" + "out.svg",
             contents: new Buffer(sprite.compile())
         }));
+
         //stream.push(new util.File({
         //    cwd:      "/",
         //    base:     "/",

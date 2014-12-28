@@ -8,10 +8,19 @@ var path           = require("path");
 
 describe("Transforming height and width attributes", function () {
     it("strips px", function () {
-        var out = builder.doTransformsOnNode(json.svg.$, attrTransforms, {path: "/Users/shane/file-1.svg"}, config());
+        var out = builder.doTransformsOnNode(json.svg.$, attrTransforms, {path: "/Users/shane/file-1.svg"}, config({
+            svgId: "shane-%f"
+        }));
         assert.deepEqual(out.x, 0);
         assert.deepEqual(out.y, 0);
         assert.deepEqual(out.width,  8);
         assert.deepEqual(out.height, 12);
+    });
+    it("removes un-needed attrs", function () {
+        var out = builder.doTransformsOnNode(json.svg.$, attrTransforms, {path: "/Users/shane/file-1.svg"}, config({
+            svgId: "shane-%f"
+        }));
+        assert.isUndefined(out.xmlns);
+        assert.isUndefined(out["xmlns:xlink"]);
     });
 });
