@@ -38,6 +38,11 @@ SpriteData.prototype.add = function (path, contents) {
  */
 SpriteData.prototype.compile = function (config, cb) {
 
+    if(typeof config === 'function' && !cb) {
+      cb = config;
+      config = {};
+    }
+
     this.svgs._processFiles(this.tasks, config, function () {
 
         var svg = this.svgs.toSVG(false);
