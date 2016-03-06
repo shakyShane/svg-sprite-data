@@ -32,11 +32,10 @@
     "async": "1.5.2",
     "css-selector-parser": "1.1.0",
     "cssom": "0.3.1",
-    "libxmljs": "0.17.1",
     "lodash": "4.6.1",
     "svg-cleaner": "0.0.4",
     "svgo": "0.6.1",
-    "vinyl-fs": "^2.4.2"
+    "xml-parser": "^1.2.1"
   },
   "devDependencies": {
     "mocha": "",
@@ -47,7 +46,8 @@
     "clean-css": "3.4.10",
     "node-sass": "3.4.2",
     "mu2": "0.5.20",
-    "less": "2.6.1"
+    "less": "2.6.1",
+    "vinyl-fs": "2.4.2"
   },
   "keywords": [
     "icon",
